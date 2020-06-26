@@ -1,5 +1,4 @@
 const { prefix } = require('./Config.json'); //prefix, token을 불러옴
-const { atest } = require('./test.json');
 //const prefix = "++"; //prefix, token을 불러옴
 const token = process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
@@ -11,7 +10,7 @@ const fs = require('fs');
 //save = JSON.parse(fs.readFileSync("C:\Users\JoyLand192\PycharmProjects\깁치봇\venv\VB.JS\Exp.json"));
 // 만약에 클라이언트가 준비되었다면, 아래의코드를 실행합니다
 // 이 이벤트는 봇이 로그인 되고 한번만 실행될것입니다
-//커밋 완료3
+//커밋 완료4
 const joutube = new Discord.MessageEmbed()
 	.setColor('#FF9900')
 	.setTitle('조이 유튜브 채널 가기')
@@ -102,8 +101,7 @@ client.on('message', (message) => {
     if (message.content === `${prefix} 재시작`) {
         if ((message.author.id = 414266558974656518) || (message.author.id = 282831530286645258)) {
             message.channel.send("클라이언트를 재시작합니다.").then(() => process.exit());
-        }
-        if ((message.author.id != 414266558974656518) && (message.author.id != 282831530286645258)) {
+        } else {
             message.channel.send("관리자만 사용할 수 있는 기능입니다.");
         }
     }
@@ -201,9 +199,6 @@ client.on('message', (message) => {
     if (message.content === "몸 어때") {
         message.channel.send("갠찮아");       
     }
-    if (message.content === `${prefix} 변수 테스트`) {
-        message.channel.send(atest);       
-    }
     if (message.author.id == 414266558974656518) {
     	if (message.content === `${prefix} 사랑해`) {
     	    message.channel.send("난 아닌데?");       
@@ -284,7 +279,7 @@ client.on('message', (message) => {
         message.channel.send(`${prefix} 경험치 설정 -> 경험치를 0으로 설정합니다. **이 작업을 수행하지 않으면 경험치가 오르지 않습니다.**`);
         message.channel.send(`${prefix} 경험치 -> 보유 경험치를 확인합니다.`);
         message.channel.send(`${prefix} 레벨 -> 유저의 레벨을 확인합니다.`);
-        message.channel.send(`${prefix} 경험치 올리기-> 경험치를 일정량 올립니다.`);
+        message.channel.send(`~~${prefix} 경험치 올리기-> 경험치를 일정량 올립니다.~~ **사용불가**`);
         message.channel.send(`주의! 베타 버전이기 때문에 봇이 재시동될때마다 경험치가 초기화됩니다.`);
     }
     if (message.content === `${prefix} 지워`) {
@@ -314,8 +309,9 @@ client.on('message', (message) => {
         message.author.level = 1;
     }
     if (message.content === `${prefix} 경험치 올리기`) {
-        message.channel.send(`경험치를 100만큼 올립니다.`);   
-        message.author.exp += 100;
+        //message.channel.send(`경험치를 100만큼 올립니다.`);
+        message.channel.send(`어...그거 이제 막혔는데`);  
+        //message.author.exp += 100;
     }
     if(message.author.exp >= message.author.maxexp) {
         message.author.exp -= message.author.maxexp;
@@ -340,10 +336,13 @@ client.on('message', (message) => {
     if (message.content === `${prefix} 유튜브`) {
         message.channel.send(joutube);       
     }
-    if (message.content.startsWith (`${prefix} 경험치 조정`)) {
-        var setexp = args[3];
-        message.author.exp = setexp;
+    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && ((message.author.id = 414266558974656518) || (message.author.id = 282831530286645258))) {
+        var setexp = message.content.slice(`${prefix} 경험치 조정`.length);
+        message.author.exp = setexp
         message.channel.send(`경험치를 ${setexp}로 조정했습니다.`);
+    }
+    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && (message.author.id != 414266558974656518) && (message.author.id != 282831530286645258)) {
+        message.channel.send(`관리자만 사용할 수 있는 기능입니다.`);
     }
     if (message.content.startsWith (`${prefix} 닉네임`)) {
         message.author.nicknames = message.content.slice(`${prefix} 닉네임 `.length);
