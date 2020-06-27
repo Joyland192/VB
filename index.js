@@ -72,6 +72,7 @@ client.on('message', (message) => {
     const kwriterid = client.users.cache.get('282831530286645258');
     const developerid = client.users.cache.get('414266558974656518');
     const args = message.content.split(" ");
+    const sharpct = client.channels.cache.get('720124444236054545');
     const blueholdcn = client.channels.cache.get('721252326249070652');
     const reinforcejd = client.channels.cache.get('541904100607131658');
     const namutest = client.channels.cache.get('697389133361971315');
@@ -169,6 +170,11 @@ client.on('message', (message) => {
         reinforcejd.send(rfjd);
         message.reply('메시지를 전송했습니다.');
     }
+    if(message.content.startsWith(`${prefix} 샤프채팅`)) {
+        let spct = message.content.slice(`${prefix} 샤프채팅`.length);
+        sharpct.send(spct);
+        message.reply('메시지를 전송했습니다.');
+    }
     if (message.content === `테스트`) {
         message.author.test = Math.floor(Math.random() * 2) + 1;
         if (message.author.test === 1) {
@@ -177,6 +183,11 @@ client.on('message', (message) => {
         if (message.author.test === 2) {
             message.channel.send("잘 되는데?");
         }
+    }
+    if (message.content.startsWith(`${prefix} 메시지`)) {
+        let sendmsg = client.users.cache.get(args[2]);
+        sendmsg.send(args[3]);
+        message.reply('메시지를 전송했습니다.');
     }
     if (message.content === `${prefix} 반응 달아`) {
         message.author.reac = Math.floor(Math.random() * 3) + 1;
@@ -377,19 +388,19 @@ client.on('message', (message) => {
         message.channel.send(`**${message.guild.name}**`)
     }
     if (message.content.startsWith (`ㅅㅂ`)) {
-        message.channel.send('욕은 나빠 >:(');
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`시발`)) {
-        message.channel.send('욕은 나빠 >:(');
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`씨발`)) {
-        message.channel.send('욕은 나빠 >:(');
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`ㅆㅂ`)) {
-        message.channel.send('욕은 나빠 >:(');
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`시벌`)) {
-        message.channel.send('욕은 나빠 >:(');
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`소환`)) {
         message.react('🤔');
