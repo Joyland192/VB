@@ -144,7 +144,7 @@ client.on('message', (message) => {
 		reinforcejd.send('..라고 개발자가 말하라 시켰어');
 	}
 	if (message.author.id != 414266558974656518) {
-        	reinforcejd.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
+        reinforcejd.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
     }
