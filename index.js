@@ -488,7 +488,7 @@ client.on('message', (message) => {
         savevar = message.content.slice(`${prefix} 변수 저장`.length);
 
         client.vars [`${message.author.id}.savedvar`] = {
-            message: message.content
+            message: savevar
         }
         fs.writeFile ("./Test.json", JSON.stringify (client.vars, null, 4), err => {
             if (err) throw err;
