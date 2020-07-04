@@ -70,6 +70,8 @@ client.on('message', ( message ) => {
     }
 });
 client.on('message', (message) => {
+    const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
+    const command = pre.shift().toLowerCase() // Array의 첫번 째 값을 없애고 반환하는 Array.shift 메서드에 String.toLowerCase 메서드로 소문자화 한다.
     const kwriterid = client.users.cache.get('282831530286645258');
     const developerid = client.users.cache.get('414266558974656518');
     const args = message.content.split(" ");
@@ -189,6 +191,9 @@ client.on('message', (message) => {
         let sendmsg = client.users.cache.get(args[2]);
         sendmsg.send(args[3]);
         message.reply('메시지를 전송했습니다.');
+    }
+    if (command === "12") {
+        message.reply("34");
     }
     if (message.content === `${prefix} 반응 달아`) {
         message.author.reac = Math.floor(Math.random() * 3) + 1;
