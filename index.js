@@ -4,7 +4,7 @@ const token = process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
 const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
 const fs = require('fs');
-const vars = require('./Test.json');
+client.vars = require('./Test.json');
 // 저장
 //fs.writeFileSync("C:\Users\JoyLand192\PycharmProjects\깁치봇\venv\VB.JS\Exp.json", JSON.stringify(save));
 // 불러오기
@@ -495,11 +495,10 @@ client.on('message', (message) => {
 	message.react('🍊');
 	message.react('🍇');
     }
-    if (message.content.startsWith(`${prefix} 변수 저장`)) {
-        savevar = message.content.slice(`${prefix} 변수 저장`.length);
-
-        client.vars [`${message.author.id}.savedvar`] = {
-            message: savevar
+    if (message.content.startsWith(`${prefix}변수 저장`)) {
+        savevar = message.content.slice(`${prefix} 변수 저장 `.length);
+        client.vars[message.author.username] = {
+          message: savevar
         }
         fs.writeFile ("./Test.json", JSON.stringify (client.vars, null, 4), err => {
             if (err) throw err;
