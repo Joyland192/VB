@@ -395,7 +395,7 @@ client.on('message', (message) => {
     }
     if (message.channel.id == '699431283935412294') {
         const gamasot = client.channels.cache.get('699431332002136155');
-        gamasot.send(`${message.author.name} : ${message.content}`);
+        gamasot.send(`${message.author.username} : ${message.content}`);
     }
     if (message.guild.id != '699319360719814686') {
         if (message.content.startsWith (`ㅅㅂ`)) {
