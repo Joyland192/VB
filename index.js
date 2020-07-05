@@ -393,20 +393,26 @@ client.on('message', (message) => {
         message.channel.send(`여기 거긴데 그..`)
         message.channel.send(`**${message.guild.name}**`)
     }
-    if (message.content.startsWith (`ㅅㅂ`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if (message.channel.id == '699431283935412294') {
+        const gamasot = client.channels.cache.get('699431332002136155');
+        gamasot.send(`${message.author.name} : ${message.content}`);
     }
-    if (message.content.startsWith (`시발`)) {
-        message.channel.send('욕설은 자제해주세요.');
-    }
-    if (message.content.startsWith (`씨발`)) {
-        message.channel.send('욕설은 자제해주세요.');
-    }
-    if (message.content.startsWith (`ㅆㅂ`)) {
-        message.channel.send('욕설은 자제해주세요.');
-    }
-    if (message.content.startsWith (`시벌`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if (message.guild.id != '699319360719814686') {
+        if (message.content.startsWith (`ㅅㅂ`)) {
+            message.channel.send('욕설은 자제해주세요.');
+        }
+        if (message.content.startsWith (`시발`)) {
+            message.channel.send('욕설은 자제해주세요.');
+        }
+        if (message.content.startsWith (`씨발`)) {
+            message.channel.send('욕설은 자제해주세요.');
+        }
+        if (message.content.startsWith (`ㅆㅂ`)) {
+            message.channel.send('욕설은 자제해주세요.');
+        }
+        if (message.content.startsWith (`시벌`)) {
+            message.channel.send('욕설은 자제해주세요.');
+        }
     }
     if (message.content.startsWith (`소환`)) {
         message.react('🤔');
