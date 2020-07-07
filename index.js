@@ -12,24 +12,7 @@ client.vars = require('./Test.json');
 // 만약에 클라이언트가 준비되었다면, 아래의코드를 실행합니다
 // 이 이벤트는 봇이 로그인 되고 한번만 실행될것입니다
 //커밋 완료4
-const joutube = new Discord.MessageEmbed()
-	.setColor('#FF9900')
-	.setTitle('조이 유튜브 채널 가기')
-	.setURL('https://www.youtube.com/channel/UCQ0Rn67N-SgEcaOqA3JS2mA')
-	.setAuthor('조이', 'https://cdn.discordapp.com/attachments/719852428777750590/719877042304450620/download20200502163021.png')
-	.setDescription('안뇽')
-	.setThumbnail('https://cdn.discordapp.com/attachments/719852428777750590/719877042304450620/download20200502163021.png')
-	//.addFields(
-	//	{ name: 'Regular field title', value: 'Some value here' },
-	//	{ name: '\u200B', value: '\u200B' },
-	//	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	//	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	//)
-	//.addField('Inline field title', 'Some value here', true)
-	//.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-    .setFooter(`VB`, 'https://cdn.discordapp.com/attachments/719852428777750590/719877042304450620/download20200502163021.png');
-//임베드 함수 생성
+
 client.once('ready', () => {
 	console.log("Bot Login.");
 	const loginlog = client.channels.cache.get('724231205570215946');
@@ -70,10 +53,39 @@ client.on('message', ( message ) => {
     }
 });
 client.on('message', (message) => {
+    //----------------------------------
     const testEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff') //임베드 좌측 색상 설정
         .setTitle('임베드 테스팅') //임베드 메인 텍스트 설정
-        .setAuthor(`${message.author.username}`, `${message.author.avatar}`, 'https://discord.gg/bRYDfzg') //위쪽의 이름,사진,연결되는 링크 설정
+        .setAuthor(`${message.author.username}`, `${message.author.avatarURL}`, 'https://discord.gg/bRYDfzg') //위쪽의 이름,사진,연결되는 링크 설정
+        .setDescription('설명') //메인 텍스트 하위 설명 설정
+        .setThumbnail('https://cdn.discordapp.com/avatars/414266558974656518/bf1da07911174d2dfcdd5309c0e2932f.png?size=1024') //우측 상단 썸네일 설정
+        .addFields(
+            { name: '필드 0', value: '필드 0 설명' }, //단독 필드
+            { name: '\u200B', value: '\u200B' },
+            { name: '필드 1', value: '필드 1 설명', inline: true }, //다형 필드
+            { name: '필드 2', value: '필드 2 설명', inline: true },
+        )
+        .setTimestamp() //현재 시간 표시
+        .setFooter('VB', 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024'); //최하위 텍스트,이미지 설정
+    const joutube = new Discord.MessageEmbed()
+        .setColor('#FF9900')
+        .setTitle('조이 유튜브 채널 가기')
+        .setURL('https://www.youtube.com/channel/UCQ0Rn67N-SgEcaOqA3JS2mA')
+        .setAuthor('조이', 'https://cdn.discordapp.com/attachments/719852428777750590/719877042304450620/download20200502163021.png')
+        .setDescription('안뇽')
+        .setThumbnail('https://cdn.discordapp.com/attachments/719852428777750590/719877042304450620/download20200502163021.png')
+        //.addFields(
+        //	{ name: 'Regular field title', value: 'Some value here' },
+        //	{ name: '\u200B', value: '\u200B' },
+        //	{ name: 'Inline field title', value: 'Some value here', inline: true },
+        //	{ name: 'Inline field title', value: 'Some value here', inline: true },
+        //)
+        //.addField('Inline field title', 'Some value here', true)
+        //.setImage('https://i.imgur.com/wSTFkRM.png')
+        .setTimestamp()
+        .setFooter(`VB`, 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024');
+    //----------------------------------
     const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
     const command = pre.shift().toLowerCase() // Array의 첫번 째 값을 없애고 반환하는 Array.shift 메서드에 String.toLowerCase 메서드로 소문자화 한다.
     const kwriterid = client.users.cache.get('282831530286645258');
