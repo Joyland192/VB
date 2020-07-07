@@ -74,9 +74,22 @@ client.on('message', (message) => {
         .setDescription(`여러 아이템을 구매할 수 있습니다.`) //메인 텍스트 하위 설명 설정
         .setThumbnail('https://cdn.discordapp.com/attachments/697821210322403429/729998124747194468/77c366436d8bd35fe8b3ce5b8c66992e.png') //우측 상단 썸네일 설정
         .addFields(
+            { name: '무기', value: '' },
             { name: '\u200B', value: '\u200B' },
             { name: '낡은 검', value: '280 골드' },
             { name: '기사의 검', value: '16800 골드', inline: true }, //다형 필드
+        )
+        .addFields(
+            { name: '방어구', value: '' },
+            { name: '\u200B', value: '\u200B' },
+            { name: '기사의 갑옷', value: '16800 골드', inline: true }, //다형 필드
+            { name: '낡은 방패', value: '개당 1000 골드', inline: true },
+        )
+        .addFields(
+            { name: '기타 아이템', value: '' },
+            { name: '\u200B', value: '\u200B' },
+            { name: '빨간 포션', value: '개당 500 골드' },
+            { name: '파란 포션', value: '개당 600 골드', inline: true }, //다형 필드
             { name: '나무 화살', value: '개당 1000 골드', inline: true },
         )
         .setTimestamp() //현재 시간 표시
