@@ -434,22 +434,20 @@ client.on('message', (message) => {
         const gamasot = client.channels.cache.get('699431332002136155');
         gamasot.send(`${message.author.username} : ${message.content}`);
     }
-    if (message.guild.id != '699319360719814686') {
-        if (message.content.startsWith (`ㅅㅂ`)) {
-            message.channel.send('욕설은 자제해주세요.');
+    if (message.content.startsWith (`ㅅㅂ`)) {
+        message.channel.send('욕설은 자제해주세요.');
         }
-        if (message.content.startsWith (`시발`)) {
-            message.channel.send('욕설은 자제해주세요.');
-        }
-        if (message.content.startsWith (`씨발`)) {
-            message.channel.send('욕설은 자제해주세요.');
-        }
-        if (message.content.startsWith (`ㅆㅂ`)) {
-            message.channel.send('욕설은 자제해주세요.');
-        }
-        if (message.content.startsWith (`시벌`)) {
-            message.channel.send('욕설은 자제해주세요.');
-        }
+    if (message.content.startsWith (`시발`)) {
+        message.channel.send('욕설은 자제해주세요.');
+    }
+    if (message.content.startsWith (`씨발`)) {
+        message.channel.send('욕설은 자제해주세요.');
+    }
+    if (message.content.startsWith (`ㅆㅂ`)) {
+        message.channel.send('욕설은 자제해주세요.');
+    }
+    if (message.content.startsWith (`시벌`)) {
+        message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`소환`)) {
         message.react('🤔');
