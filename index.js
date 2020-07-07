@@ -70,6 +70,9 @@ client.on('message', ( message ) => {
     }
 });
 client.on('message', (message) => {
+    const testEmbed = new Discord.MessageEmbed()
+        .setTitle('임베드 테스팅')
+        .setImage(message.author.avatar)
     const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
     const command = pre.shift().toLowerCase() // Array의 첫번 째 값을 없애고 반환하는 Array.shift 메서드에 String.toLowerCase 메서드로 소문자화 한다.
     const kwriterid = client.users.cache.get('282831530286645258');
@@ -125,6 +128,9 @@ client.on('message', (message) => {
         	blueholdcn.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
+    }
+    if (message.content === `${prefix} 임베드`) {
+        message.channel.send(testembed);
     }
     if(message.content.startsWith(`${prefix} 나무채팅`)) {
         let nmtt = message.content.slice(`${prefix} 나무채팅`.length);
