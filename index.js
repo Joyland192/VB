@@ -68,6 +68,19 @@ client.on('message', (message) => {
         )
         .setTimestamp() //현재 시간 표시
         .setFooter('VB', 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024'); //최하위 텍스트,이미지 설정
+    const shopEmbed = new Discord.MessageEmbed()
+        .setColor('#00ddff') //임베드 좌측 색상 설정
+        .setTitle('상점') //임베드 메인 텍스트 설정
+        .setDescription(`여러 아이템을 구매할 수 있습니다.`) //메인 텍스트 하위 설명 설정
+        .setThumbnail('https://cdn.discordapp.com/attachments/697821210322403429/729998124747194468/77c366436d8bd35fe8b3ce5b8c66992e.png') //우측 상단 썸네일 설정
+        .addFields(
+            { name: '\u200B', value: '\u200B' },
+            { name: '낡은 검', value: '280 골드' },
+            { name: '기사의 검', value: '16800 골드', inline: true }, //다형 필드
+            { name: '나무 화살', value: '개당 1000 골드', inline: true },
+        )
+        .setTimestamp() //현재 시간 표시
+        .setFooter('VB', 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024'); //최하위 텍스트,이미지 설정
     const joutube = new Discord.MessageEmbed()
         .setColor('#FF9900')
         .setTitle('조이 유튜브 채널 가기')
@@ -130,6 +143,9 @@ client.on('message', (message) => {
     }
     if (message.content.startsWith (`${prefix} 테섭`)) {
         message.channel.send('https://discord.gg/bRYDfzg');
+    }
+    if (message.content === `${prefix} 상점`) {
+        message.channel.send(shopEmbed);
     }
     if(message.content.startsWith(`${prefix} 블홀공지`)) {
         let bhkj = message.content.slice(`${prefix} 블홀공지`.length);
