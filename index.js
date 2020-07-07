@@ -71,9 +71,9 @@ client.on('message', ( message ) => {
 });
 client.on('message', (message) => {
     const testEmbed = new Discord.MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle('임베드 테스팅')
-        .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+        .setColor('#0099ff') //임베드 좌측 색상 설정
+        .setTitle('임베드 테스팅') //임베드 메인 텍스트 설정
+        .setAuthor(`${message.author.username}`, `${message.author.avatar}`, 'https://discord.gg/bRYDfzg') //위쪽의 이름,사진,연결되는 링크 설정
     const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
     const command = pre.shift().toLowerCase() // Array의 첫번 째 값을 없애고 반환하는 Array.shift 메서드에 String.toLowerCase 메서드로 소문자화 한다.
     const kwriterid = client.users.cache.get('282831530286645258');
