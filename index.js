@@ -57,7 +57,7 @@ client.on('message', (message) => {
     const testEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff') //임베드 좌측 색상 설정
         .setTitle('임베드 테스팅') //임베드 메인 텍스트 설정
-        .setAuthor(`${message.author.username}`, `${message.author.avatarURL}`, 'https://discord.gg/bRYDfzg') //위쪽의 이름,사진,연결되는 링크 설정
+        .setAuthor(`${message.author.username}`, ``, 'https://discord.gg/bRYDfzg') //위쪽의 이름,사진,연결되는 링크 설정
         .setDescription('설명') //메인 텍스트 하위 설명 설정
         .setThumbnail('https://cdn.discordapp.com/avatars/414266558974656518/bf1da07911174d2dfcdd5309c0e2932f.png?size=1024') //우측 상단 썸네일 설정
         .addFields(
