@@ -130,7 +130,7 @@ client.on('message', (message) => {
         message.reply('메시지를 전송했습니다.');
     }
     if (message.content === `${prefix} 임베드`) {
-        message.channel.send(testembed);
+        message.channel.send(testEmbed);
     }
     if(message.content.startsWith(`${prefix} 나무채팅`)) {
         let nmtt = message.content.slice(`${prefix} 나무채팅`.length);
