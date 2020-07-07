@@ -495,16 +495,16 @@ client.on('message', (message) => {
 	message.react('🍊');
 	message.react('🍇');
     }
-    if (message.content.startsWith(`${prefix}변수 저장`)) {
-        savevar = message.content.slice(`${prefix} 변수 저장 `.length);
-        client.vars[message.author.username] = {
-          message: savevar
-        }
-        fs.writeFile ("./Test.json", JSON.stringify (client.vars, null, 4), err => {
-            if (err) throw err;
-        });
-        message.channel.send(`변수가 저장되었습니다.`);
-    }
+    //if (message.content.startsWith(`${prefix} 변수 저장`)) {
+    //    savevar = message.content.slice(`${prefix} 변수 저장 `.length);
+    //    client.vars[message.author.username] = {
+    //      message: savevar
+    //    }
+    //    fs.writeFile ("./Test.json", JSON.stringify (client.vars, null, 4), err => {
+    //        if (err) throw err;
+    //    });
+    //    message.channel.send(`변수가 저장되었습니다.`);
+    //}
     message.author.exp += 20;
 });
 
