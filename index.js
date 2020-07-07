@@ -41,17 +41,6 @@ client.on('message', ( message ) => {
         }
     }
 });
-client.on('message', ( message ) => {
-    if (message.channel.type === "dm") {
-        message.author.dm = true
-    }
-    if(!message.author.dm) {
-        const args = message.content.split(" ");
-        if (message.content === `${prefix} ID`) {
-            message.channel.send(`${message.author.id}`);
-        }
-    }
-});
 client.on('message', (message) => {
     //----------------------------------
     const testEmbed = new Discord.MessageEmbed()
