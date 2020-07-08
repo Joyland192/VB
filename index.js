@@ -532,13 +532,18 @@ client.on('message', (message) => {
     }
     if (message.content.startsWith(`${prefix} 변수 저장`)) {
         savevar = message.content.slice(`${prefix} 변수 저장 `.length);
-        client.vars[message.author.username] = {
+        client.vars[message.author.id] = {
           message: savevar
         }
         fs.writeFile (`${__dirname}/Test.json`, JSON.stringify (client.vars, null, 4), err => {
             if (err) throw err;
         });
         message.channel.send(`변수가 저장되었습니다.`);
+    }
+    if (message.content === `${prefix} 변수 로드`) {
+        let savedvar = client.vars[message.author.id].message;
+        message.channel.send(`변수를 불러옵니다.`);
+        message.channel.send(savedvar);
     }
     message.author.exp += 20;
 });
