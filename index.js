@@ -5,6 +5,7 @@ const Discord = require(`discord.js`); // discord.js를 불러옴
 const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
 const fs = require('fs');
 client.vars = require(`${__dirname}/Test.json`);
+client.expdata = require(`${__dirname}/exp.json`);
 // 저장
 //fs.writeFileSync("C:\Users\JoyLand192\PycharmProjects\깁치봇\venv\VB.JS\Exp.json", JSON.stringify(save));
 // 불러오기
@@ -134,7 +135,7 @@ client.on('message', (message) => {
         }
     }
     if (message.content === `${prefix} 재시작`) {
-        if ((message.author.id = 414266558974656518) || (message.author.id = 282831530286645258)) {
+        if ((message.author.id == '414266558974656518') || (message.author.id == '282831530286645258')) {
             message.channel.send("클라이언트를 재시작합니다.").then(() => process.exit());
         } else {
             message.channel.send("관리자만 사용할 수 있는 기능입니다.");
@@ -152,11 +153,11 @@ client.on('message', (message) => {
     if(message.content.startsWith(`${prefix} 블홀공지`)) {
         let bhkj = message.content.slice(`${prefix} 블홀공지`.length);
         blueholdcn.send(bhkj);
-	if (message.author.id = 414266558974656518) {
+	if (message.author.id == '414266558974656518') {
 		blueholdcn.send('..라고 개발자가 말하라 시켰어');
 	}
-	if (message.author.id != 414266558974656518) {
-        	blueholdcn.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
+	if (message.author.id != '414266558974656518') {
+        blueholdcn.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
     }
@@ -166,10 +167,10 @@ client.on('message', (message) => {
     if(message.content.startsWith(`${prefix} 나무채팅`)) {
         let nmtt = message.content.slice(`${prefix} 나무채팅`.length);
         namutest.send(nmtt);
-	if (message.author.id = 414266558974656518) {
+	if (message.author.id == '414266558974656518') {
 		namutest.send('..라고 개발자가 말하라 시켰어');
 	}
-	if (message.author.id != 414266558974656518) {
+	if (message.author.id != '414266558974656518') {
         	namutest.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
@@ -180,10 +181,10 @@ client.on('message', (message) => {
     if(message.content.startsWith(`${prefix} 렌포잡담`)) {
         let rfjd = message.content.slice(`${prefix} 렌포잡담`.length);
         reinforcejd.send(rfjd);
-	if (message.author.id = 414266558974656518) {
+	if (message.author.id == '414266558974656518') {
 		reinforcejd.send('..라고 개발자가 말하라 시켰어');
 	}
-	if (message.author.id != 414266558974656518) {
+	if (message.author.id != '414266558974656518') {
         reinforcejd.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
@@ -197,10 +198,10 @@ client.on('message', (message) => {
     if (message.content.startsWith(`${prefix} 오이`)) {
         let oodm = message.content.slice(`${prefix} 오이`.length);
         kwriterid.send(oodm);
-	if (message.author.id = 414266558974656518) {
+	if (message.author.id == '414266558974656518') {
 		kwriterid.send('..라고 개발자가 말하라 시켰어');
 	}
-	if (message.author.id != 414266558974656518) {
+	if (message.author.id != '414266558974656518') {
         	kwriterid.send(`..라고 ${message.author.tag} (이)가 말하라 시켰어`);
 	}
         message.reply('메시지를 전송했습니다.');
@@ -253,7 +254,7 @@ client.on('message', (message) => {
     if (message.content === "몸 어때") {
         message.channel.send("갠찮아");       
     }
-    if (message.author.id == 414266558974656518) {
+    if (message.author.id == '414266558974656518') {
     	if (message.content === `${prefix} 사랑해`) {
     	    message.channel.send("난 아닌데?");       
     	}
@@ -291,7 +292,7 @@ client.on('message', (message) => {
             message.channel.send("? ㅅㅂ 잠만")    
     	}
     }
-    if (message.author.id != 414266558974656518) {
+    if (message.author.id != '414266558974656518') {
     	if (message.content === `${prefix} 사랑해`) {
     	    message.channel.send("저도요 히히");       
     	}
@@ -390,12 +391,12 @@ client.on('message', (message) => {
     if (message.content === `${prefix} 유튜브`) {
         message.channel.send(joutube);       
     }
-    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && ((message.author.id = 414266558974656518) || (message.author.id = 282831530286645258))) {
+    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && ((message.author.id == '414266558974656518') || (message.author.id == '282831530286645258'))) {
         var setexp = message.content.slice(`${prefix} 경험치 조정`.length);
         message.author.exp = setexp
         message.channel.send(`경험치를 ${setexp}로 조정했습니다.`);
     }
-    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && (message.author.id != 414266558974656518) && (message.author.id != 282831530286645258)) {
+    if ((message.content.startsWith (`${prefix} 경험치 조정`)) && (message.author.id != '414266558974656518') && (message.author.id != '282831530286645258')) {
         message.channel.send(`관리자만 사용할 수 있는 기능입니다.`);
     }
     if (message.content.startsWith (`${prefix} 닉네임`)) {
@@ -546,6 +547,28 @@ client.on('message', (message) => {
         message.channel.send(savedvar);
     }
     message.author.exp += 20;
+    if (message.author.id != '556660274380406805') {
+        saveexp = message.author.exp;
+        savemaxexp = message.author.maxexp;
+        savelevel = message.author.level;
+        client.expdata[message.author.id] = {
+            exp: saveexp,
+            maxexp: savemaxexp,
+            level: savelevel
+        }
+        fs.writeFile (`${__dirname}/exp.json`, JSON.stringify (client.exp, null, 4), err => {
+            if (err) throw err;
+        });
+    }
+    if (message.content === `${prefix} 경험치 로드`) {
+        let savedexp = client.expdata[message.author.id].exp;
+        let savedmaxexp = client.expdata[message.author.id].maxexp;
+        let savedlevel = client.expdata[message.author.id].level;
+        message.channel.send(`경험치를 불러옵니다.`);
+        message.author.exp = savedexp;
+        message.author.maxexp = savedmaxexp;
+        message.author.level = savedlevel;
+    }
 });
 
 
