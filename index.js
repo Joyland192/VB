@@ -543,7 +543,7 @@ client.on('message', (message) => {
         client.vars[message.author.id] = {
           message: savevar
         }
-        fs.writeFile (`${process.cwd()}./Test.json`, JSON.stringify (client.vars, null, 4), err => {
+        fs.writeFile (`${process.cwd()}/Test.json`, JSON.stringify (client.vars, null, 4), err => {
             if (err) throw err;
         });
         message.channel.send(`변수가 저장되었습니다.`);
@@ -563,7 +563,7 @@ client.on('message', (message) => {
             maxexp: savemaxexp,
             level: savelevel
         }
-        fs.writeFile (`${process.cwd()}./exp.json`, JSON.stringify (client.exp, null, 4), err => {
+        fs.writeFile (`${process.cwd()}/exp.json`, JSON.stringify (client.exp, null, 4), err => {
             if (err) throw err;
         });
     }
