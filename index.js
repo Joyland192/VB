@@ -48,6 +48,7 @@ client.on('message', (message) => {
     }
     if (!message.author.notsetexp) {
         message.author.exp = 0;
+        message.author.level = 1;
     }
     //----------------------------------
     const testEmbed = new Discord.MessageEmbed()
