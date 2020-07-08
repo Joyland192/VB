@@ -4,8 +4,8 @@ const token = process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
 const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
 const fs = require('fs');
-client.vars = require(`${__dirname}/Test.json`);
-client.expdata = require(`${__dirname}/exp.json`);
+client.vars = require(`${process.cwd()}./Test.json`);
+client.expdata = require(`${process.cwd()}./exp.json`);
 // 저장
 //fs.writeFileSync("C:\Users\JoyLand192\PycharmProjects\깁치봇\venv\VB.JS\Exp.json", JSON.stringify(save));
 // 불러오기
@@ -543,7 +543,7 @@ client.on('message', (message) => {
         client.vars[message.author.id] = {
           message: savevar
         }
-        fs.writeFile (`${__dirname}/Test.json`, JSON.stringify (client.vars, null, 4), err => {
+        fs.writeFile (`${process.cwd()}./Test.json`, JSON.stringify (client.vars, null, 4), err => {
             if (err) throw err;
         });
         message.channel.send(`변수가 저장되었습니다.`);
@@ -563,7 +563,7 @@ client.on('message', (message) => {
             maxexp: savemaxexp,
             level: savelevel
         }
-        fs.writeFile (`${__dirname}/exp.json`, JSON.stringify (client.exp, null, 4), err => {
+        fs.writeFile (`${process.cwd()}./exp.json`, JSON.stringify (client.exp, null, 4), err => {
             if (err) throw err;
         });
     }
