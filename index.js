@@ -445,6 +445,15 @@ client.on('message', (message) => {
         if ((message.content.includes (`쉬`)) && (message.content.includes (`벌`))) {
             message.delete();
         }
+        if ((message.content.includes (`시`)) && (message.content.includes (`바`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`씨`)) && (message.content.includes (`바`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`쌰`)) && (message.content.includes (`발`))) {
+            message.delete();
+        }
         if ((message.content.includes (`쉬`)) && (message.content.includes (`발`))) {
             message.delete();
         }
@@ -476,6 +485,15 @@ client.on('message', (message) => {
         message.channel.send ('욕설은 자제해주세요.');
     }
     if ((message.content.includes (`씨`)) && (message.content.includes (`발`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`시`)) && (message.content.includes (`바`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`씨`)) && (message.content.includes (`바`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`쌰`)) && (message.content.includes (`발`))) {
         message.channel.send ('욕설은 자제해주세요.');
     }
     if ((message.content.includes (`시`)) && (message.content.includes (`불`))) {
