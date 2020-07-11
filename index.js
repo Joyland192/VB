@@ -421,6 +421,9 @@ client.on('message', (message) => {
         if ((message.content.includes (`ㅅ`)) && (message.content.includes (`ㅂ`))) {
             message.delete();
         }
+        if ((message.content.includes (`ㅆ`)) && (message.content.includes (`ㅂ`))) {
+            message.delete();
+        }
         if ((message.content.includes (`시`)) && (message.content.includes (`발`))) {
             message.delete();
         }
@@ -461,6 +464,9 @@ client.on('message', (message) => {
         gamasot.send(`${message.author.username} : ${message.content}`);
     }
     if ((message.content.includes (`ㅅ`)) && (message.content.includes (`ㅂ`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`ㅆ`)) && (message.content.includes (`ㅂ`))) {
         message.channel.send ('욕설은 자제해주세요.');
     }
     if ((message.content.includes (`시`)) && (message.content.includes (`발`))) {
