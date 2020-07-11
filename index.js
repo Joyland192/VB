@@ -118,7 +118,7 @@ client.on('message', (message) => {
     const blueholdcn = client.channels.cache.get('721252326249070652');
     const reinforcejd = client.channels.cache.get('541904100607131658');
     const namutest = client.channels.cache.get('697389133361971315');
-    const mint1 = client.channels.cache.get('731479171821338644');
+    const mints = client.channels.cache.get('731479171821338644');
     message.author.maxexp = message.author.level*300;
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
@@ -221,7 +221,7 @@ client.on('message', (message) => {
     }
     if(message.content.startsWith(`${prefix} 민트`)) {
         let mintc = message.content.slice(`${prefix} 민트`.length);
-        mint1.send(mintc);
+        mints.send(mintc);
         message.reply('메시지를 전송했습니다.');
     }
     if(message.content.startsWith(`${prefix} 샤프채팅`)) {
