@@ -418,19 +418,19 @@ client.on('message', (message) => {
         }
     }
     if (message.channel.id === '541904100607131658') {
-        if (message.content.startsWith (`ㅅㅂ`)) {
+        if (message.content.includes (`ㅅㅂ`)) {
             message.delete();
         }
-        if (message.content.startsWith (`시발`)) {
+        if (message.content.includes (`시발`)) {
             message.delete();
         }
-        if (message.content.startsWith (`씨발`)) {
+        if (message.content.includes (`씨발`)) {
             message.delete();
         }
-        if (message.content.startsWith (`ㅆㅂ`)) {
+        if (message.content.includes (`ㅆㅂ`)) {
             message.delete();
         }
-        if (message.content.startsWith (`시벌`)) {
+        if (message.content.includes (`시벌`)) {
             message.delete();
         }
     }
@@ -445,16 +445,16 @@ client.on('message', (message) => {
     if (message.content.includes (`ㅅㅂ`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
-    if (message.content.startsWith (`시발`)) {
+    if (message.content.includes (`시발`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
-    if (message.content.startsWith (`씨발`)) {
+    if (message.content.includes (`씨발`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
-    if (message.content.startsWith (`ㅆㅂ`)) {
+    if (message.content.includes (`ㅆㅂ`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
-    if (message.content.startsWith (`시벌`)) {
+    if (message.content.includes (`시벌`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`소환`)) {
