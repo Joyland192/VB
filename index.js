@@ -442,9 +442,9 @@ client.on('message', (message) => {
         const gamasot = client.channels.cache.get('699431332002136155');
         gamasot.send(`${message.author.username} : ${message.content}`);
     }
-    if (message.content.startsWith (`ㅅㅂ`)) {
+    if (message.content.includes (`ㅅㅂ`)) {
         message.channel.send('욕설은 자제해주세요.');
-        }
+    }
     if (message.content.startsWith (`시발`)) {
         message.channel.send('욕설은 자제해주세요.');
     }
