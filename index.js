@@ -418,19 +418,37 @@ client.on('message', (message) => {
         }
     }
     if (message.channel.id === '541904100607131658') {
-        if (message.content.includes (`ㅅㅂ`)) {
+        if ((message.content.includes (`ㅅ`)) && (message.content.includes (`ㅂ`))) {
             message.delete();
         }
-        if (message.content.includes (`시발`)) {
+        if ((message.content.includes (`시`)) && (message.content.includes (`발`))) {
             message.delete();
         }
-        if (message.content.includes (`씨발`)) {
+        if ((message.content.includes (`씨`)) && (message.content.includes (`발`))) {
             message.delete();
         }
-        if (message.content.includes (`ㅆㅂ`)) {
+        if ((message.content.includes (`시`)) && (message.content.includes (`불`))) {
             message.delete();
         }
-        if (message.content.includes (`시벌`)) {
+        if ((message.content.includes (`시`)) && (message.content.includes (`벌`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`씨`)) && (message.content.includes (`불`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`쉬`)) && (message.content.includes (`벌`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`쉬`)) && (message.content.includes (`발`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`새`)) && (message.content.includes (`끼`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`새`)) && (message.content.includes (`기`))) {
+            message.delete();
+        }
+        if ((message.content.includes (`미`)) && (message.content.includes (`친`))) {
             message.delete();
         }
     }
@@ -442,20 +460,38 @@ client.on('message', (message) => {
         const gamasot = client.channels.cache.get('699431332002136155');
         gamasot.send(`${message.author.username} : ${message.content}`);
     }
-    if (message.content.includes (`ㅅㅂ`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if ((message.content.includes (`ㅅ`)) && (message.content.includes (`ㅂ`))) {
+        message.channel.send ('욕설은 자제해주세요.');
     }
-    if (message.content.includes (`시발`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if ((message.content.includes (`시`)) && (message.content.includes (`발`))) {
+        message.channel.send ('욕설은 자제해주세요.');
     }
-    if (message.content.includes (`씨발`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if ((message.content.includes (`씨`)) && (message.content.includes (`발`))) {
+        message.channel.send ('욕설은 자제해주세요.');
     }
-    if (message.content.includes (`ㅆㅂ`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if ((message.content.includes (`시`)) && (message.content.includes (`불`))) {
+        message.channel.send ('욕설은 자제해주세요.');
     }
-    if (message.content.includes (`시벌`)) {
-        message.channel.send('욕설은 자제해주세요.');
+    if ((message.content.includes (`시`)) && (message.content.includes (`벌`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`씨`)) && (message.content.includes (`불`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`쉬`)) && (message.content.includes (`벌`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`쉬`)) && (message.content.includes (`발`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`새`)) && (message.content.includes (`끼`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`새`)) && (message.content.includes (`기`))) {
+        message.channel.send ('욕설은 자제해주세요.');
+    }
+    if ((message.content.includes (`미`)) && (message.content.includes (`친`))) {
+        message.channel.send ('욕설은 자제해주세요.');
     }
     if (message.content.startsWith (`소환`)) {
         message.react('🤔');
