@@ -475,6 +475,7 @@ client.on('message', (message) => {
         const gamasot = client.channels.cache.get('699431332002136155');
         gamasot.send(`${message.author.username} : ${message.content}`);
     }
+    if (message.channel.id === '541904100607131658') {
     if ((message.content.includes (`ㅅ`)) && (message.content.includes (`ㅂ`))) {
         message.channel.send ('욕설은 자제해주세요.');
     }
@@ -522,6 +523,7 @@ client.on('message', (message) => {
     }
     if ((message.content.includes (`미`)) && (message.content.includes (`친`))) {
         message.channel.send ('욕설은 자제해주세요.');
+    }
     }
     if (message.content.startsWith (`소환`)) {
         message.react('🤔');
