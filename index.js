@@ -226,8 +226,8 @@ client.on('message', (message) => {
         mych.send(mymsg);
         message.reply('메시지를 전송했습니다.');
     }
-    if (message.content.startsWith(`${prefix} 명언`)) {
-        let myms = message.content.slice(`${prefix} 명언`.length);
+    if (message.content.startsWith(`${prefix} 면접`)) {
+        let myms = message.content.slice(`${prefix} 면접`.length);
         mymj.send(myms);
         message.reply('메시지를 전송했습니다.');
     }
