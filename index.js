@@ -119,6 +119,7 @@ client.on('message', (message) => {
     const reinforcejd = client.channels.cache.get('541904100607131658');
     const namutest = client.channels.cache.get('697389133361971315');
     const mints = client.channels.cache.get('731479171821338644');
+    const mych = client.channels.cache.get('699431283935412294');
     message.author.maxexp = message.author.level*300;
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
@@ -214,9 +215,14 @@ client.on('message', (message) => {
 	}
         message.reply('메시지를 전송했습니다.');
     }
-    if(message.content.startsWith(`${prefix} 렌포비밀잡담`)) {
+    if (message.content.startsWith(`${prefix} 렌포비밀잡담`)) {
         let rfjd = message.content.slice(`${prefix} 렌포비밀잡담`.length);
         reinforcejd.send(rfjd);
+        message.reply('메시지를 전송했습니다.');
+    }
+    if (message.content.startsWith(`${prefix} 명언`)) {
+        let mymsg = message.content.slice(`${prefix} 명언`.length);
+        mych.send(mymsg);
         message.reply('메시지를 전송했습니다.');
     }
     if(message.content.startsWith(`${prefix} 민트`)) {
