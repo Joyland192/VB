@@ -396,7 +396,7 @@ client.on('message', (message) => {
     if(message.author.exp >= message.author.maxexp) {
         message.author.exp -= message.author.maxexp;
         message.author.level++;
-        message.channel.send("축하합니다! 레벨업 하셨습니다!");
+        //message.channel.send("축하합니다! 레벨업 하셨습니다!");
     }
     if (message.content === `${prefix} 경험치`) {
         message.channel.send(`당신의 보유 경험치는 ${message.author.exp}/${message.author.maxexp} 입니다.`);       
