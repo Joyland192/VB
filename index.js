@@ -1,7 +1,7 @@
 const { prefix } = require('./Config.json'); //prefix, token을 불러옴
 const { inspect } = require('util');
 //const prefix = "++"; //prefix, token을 불러옴
-const token = "NTU2NjYwMjc0MzgwNDA2ODA1.XuXezA.sQHgQ3hzmWR8uW2-mPlYstYQygM";//process.env.token;
+const token = process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
 const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
 const fs = require('fs');
