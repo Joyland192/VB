@@ -1,7 +1,7 @@
 const { prefix } = require('./Config.json'); //prefix, token을 불러옴
 const { inspect } = require('util');
 //const prefix = "++"; //prefix, token을 불러옴
-const token = process.env.token;
+const token = "NTU2NjYwMjc0MzgwNDA2ODA1.XuXezA.sQHgQ3hzmWR8uW2-mPlYstYQygM";//process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
 const client = new Discord.Client(); // 새로운 디스코드 클라이언트를 만듬
 const fs = require('fs');
@@ -109,9 +109,8 @@ client.on('message', (message) => {
         //.setImage('https://i.imgur.com/wSTFkRM.png')
         .setTimestamp()
         .setFooter(`VB`, 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024');
-    //----------------------------------
+    //----------------------------------    
     const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
-    const command = args.shift().toLowerCase();
     const kwriterid = client.users.cache.get('282831530286645258');
     const developerid = client.users.cache.get('414266558974656518');
     const args = message.content.split(" ");
@@ -122,22 +121,8 @@ client.on('message', (message) => {
     const mints = client.channels.cache.get('731479171821338644');
     const mych = client.channels.cache.get('699431283935412294');
     const mymj = client.channels.cache.get('700523457057783848');
+    const command = args.shift().toLowerCase();
     message.author.maxexp = message.author.level*300;
-    if (message.content === `${prefix} eval`) {
-        // Put your userID here
-        if (message.author.id !== '414266558974656518') return;
-        
-        let evaled;
-        try {
-          evaled = await eval(args.join(' '));
-          message.channel.send(inspect(evaled));
-          console.log(inspect(evaled));
-        }
-        catch (error) {
-          console.error(error);
-          message.reply('there was an error during evaluation.');
-        }
-    }
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
         message.channel.send("안한다구요!!");
