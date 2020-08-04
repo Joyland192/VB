@@ -640,28 +640,6 @@ client.on('message', (message) => {
         message.channel.send(savedvar);
     }
     message.author.exp += 20;
-    if (message.author.id != '556660274380406805') {
-        saveexp = message.author.exp;
-        savemaxexp = message.author.maxexp;
-        savelevel = message.author.level;
-        client.expdata[message.author.id] = {
-            exp: saveexp,
-            maxexp: savemaxexp,
-            level: savelevel
-        }
-        fs.writeFile (`${process.cwd()}/exp.json`, JSON.stringify (client.exp, null, 4), err => {
-            if (err) throw err;
-        });
-    }
-    if (message.content === `${prefix} 경험치 로드`) {
-        let savedexp = client.expdata[message.author.id].exp;
-        let savedmaxexp = client.expdata[message.author.id].maxexp;
-        let savedlevel = client.expdata[message.author.id].level;
-        message.channel.send(`경험치를 불러옵니다.`);
-        message.author.exp = savedexp;
-        message.author.maxexp = savedmaxexp;
-        message.author.level = savedlevel;
-    }
 });
 
 
