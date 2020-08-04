@@ -1,4 +1,5 @@
 const { prefix } = require('./Config.json'); //prefix, token을 불러옴
+const { inspect } = require('util');
 //const prefix = "++"; //prefix, token을 불러옴
 const token = process.env.token;
 const Discord = require(`discord.js`); // discord.js를 불러옴
@@ -18,7 +19,7 @@ client.once('ready', () => {
 	console.log("Bot Login.");
 	const loginlog = client.channels.cache.get('724231205570215946');
 	loginlog.send(`봇 로그인.`);
-	client.user.setActivity(`${prefix} 도움 레벨을 입력해보세요.                                `);
+	client.user.setActivity(`${prefix} 도움을 입력해보세요.                                `);
 });
 client.on('message', ( message ) => {
     if(message.channel.type === "dm" ) { 
@@ -110,7 +111,7 @@ client.on('message', (message) => {
         .setFooter(`VB`, 'https://cdn.discordapp.com/avatars/556660274380406805/ff636fafdfc5f3672b587bdcf857c0a6.png?size=1024');
     //----------------------------------
     const pre = message.content.slice(prefix.length).split(" ") // 메세지에서 프리픽스의 글자 수만큼 잘라내고, String.split 메서드를 이용하여 Array로 바꾼다.
-    const command = pre.shift().toLowerCase() // Array의 첫번 째 값을 없애고 반환하는 Array.shift 메서드에 String.toLowerCase 메서드로 소문자화 한다.
+    const command = args.shift().toLowerCase();
     const kwriterid = client.users.cache.get('282831530286645258');
     const developerid = client.users.cache.get('414266558974656518');
     const args = message.content.split(" ");
@@ -122,6 +123,21 @@ client.on('message', (message) => {
     const mych = client.channels.cache.get('699431283935412294');
     const mymj = client.channels.cache.get('700523457057783848');
     message.author.maxexp = message.author.level*300;
+    if (message.content === `${prefix} eval`) {
+        // Put your userID here
+        if (message.author.id !== '414266558974656518') return;
+        
+        let evaled;
+        try {
+          evaled = await eval(args.join(' '));
+          message.channel.send(inspect(evaled));
+          console.log(inspect(evaled));
+        }
+        catch (error) {
+          console.error(error);
+          message.reply('there was an error during evaluation.');
+        }
+    }
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
         message.channel.send("안한다구요!!");
@@ -255,9 +271,6 @@ client.on('message', (message) => {
         sendmsg.send(args[3]);
         message.reply('메시지를 전송했습니다.');
     }
-    if (command === "12") {
-        message.reply("34");
-    }
     if (message.content === `${prefix} 반응 달아`) {
         message.author.reac = Math.floor(Math.random() * 3) + 1;
         if (message.author.reac === 1) {
@@ -355,12 +368,47 @@ client.on('message', (message) => {
             message.channel.send("네? 절 끄실 수 있어요?")    
     	}
     }
+    if (message.content === `${prefix} 도움`) {
+        message.channel.send(`${prefix} 도움 레벨 -> 레벨업 관련 도움말을 봅니다.`);
+        message.channel.send(`${prefix} 도움 계산 -> 수 계산 관련 도움말을 봅니다.`);
+    }
     if (message.content === `${prefix} 도움 레벨`) {
         //message.channel.send(`${prefix} 경험치 설정 -> 경험치를 0으로 설정합니다. **이 작업을 수행하지 않으면 경험치가 오르지 않습니다.**`);
         message.channel.send(`${prefix} 경험치 -> 보유 경험치를 확인합니다.`);
         message.channel.send(`${prefix} 레벨 -> 유저의 레벨을 확인합니다.`);
         message.channel.send(`~~${prefix} 경험치 올리기-> 경험치를 일정량 올립니다.~~ **사용불가**`);
         message.channel.send(`주의! 베타 버전이기 때문에 봇이 재시동될때마다 경험치가 초기화됩니다.`);
+    }
+    if (message.content === `${prefix} 도움 계산`) {
+        //message.channel.send(`${prefix} 경험치 설정 -> 경험치를 0으로 설정합니다. **이 작업을 수행하지 않으면 경험치가 오르지 않습니다.**`);
+        message.channel.send(`${prefix} 계산 \`수\` \`연산기호\` \`수2\`로 계산합니다.`);
+        message.channel.send(`사용 가능 기호 - +, -, *, /`);
+    }
+    if (message.content.startsWith(`${prefix} 계산`)) {
+        number1 = args[2];
+        number2 = args[4];
+        giho = args[3];
+        if (giho = "+") {
+            theresult = number1 + number2;
+
+            return theresult;
+        }
+        if (giho = "-") {
+            theresult = number1 - number2;
+
+            return theresult;
+        }
+        if (giho = "*") {
+            theresult = number1 * number2;
+
+            return theresult;
+        }
+        if (giho = "/") {
+            theresult = number1 / number2;
+
+            return theresult;
+        }
+        message.channel.send(`결과값 = ${theresult}`);
     }
     if (message.content === `${prefix} 지워`) {
         message.author.plsdel = Math.floor(Math.random() * 5) + 1;
