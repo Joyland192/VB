@@ -132,7 +132,7 @@ client.on('message', (message) => {
     const twozerothree = client.channels.cache.get('740370121348087852');
     const twozerofour = client.channels.cache.get('740370123986174013');
     const twozerofive = client.channels.cache.get('740370274721202230');
-    const glitchchannel = client.channels.cache.get('740377502249123841');
+    const twozerosix = client.channels.cache.get('740377502249123841');
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
         message.channel.send("안한다구요!!");
@@ -193,8 +193,8 @@ client.on('message', (message) => {
         twozerofour.send(`${message.channel.name} : ${dafigisuksagongji}`);
         twozerofive.send("❗ 전체 공지 알림 ❗");
         twozerofive.send(`${message.channel.name} : ${dafigisuksagongji}`);
-        glitchchannel.send("❗ 전체 공지 알림 ❗");
-        glitchchannel.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozerosix.send("❗ 전체 공지 알림 ❗");
+        twozerosix.send(`${message.channel.name} : ${dafigisuksagongji}`);
     }
     if (message.content.startsWith(`${prefix} 전송 101`)) {
         let dafisend = message.content.slice(`${prefix} 전송 101`.length);
@@ -235,6 +235,10 @@ client.on('message', (message) => {
     if (message.content.startsWith(`${prefix} 전송 205`)) {
         let dafisend = message.content.slice(`${prefix} 전송 205`.length);
         twozerofive.send(`${message.channel.name} : ${dafisend}`);
+    }
+    if (message.content.startsWith(`${prefix} 전송 206`)) {
+        let dafisend = message.content.slice(`${prefix} 전송 206`.length);
+        twozerosix.send(`${message.channel.name} : ${dafisend}`);
     }
     if(message.content.startsWith(`${prefix} 블홀공지`)) {
         let bhkj = message.content.slice(`${prefix} 블홀공지`.length);
