@@ -122,7 +122,17 @@ client.on('message', (message) => {
     const mych = client.channels.cache.get('699431283935412294');
     const mymj = client.channels.cache.get('700523457057783848');
     const command = args.shift().toLowerCase();
-    message.author.maxexp = message.author.level*300;
+    const onezeroone = client.channels.cache.get('740369706585948242');
+    const onezerotwo = client.channels.cache.get('740369781311537182');
+    const onezerothree = client.channels.cache.get('740369801238544555');
+    const onezerofour = client.channels.cache.get('740369977563152465');
+    const onezerofive = client.channels.cache.get('740369992754921562');
+    const twozeroone = client.channels.cache.get('740370069342650389');
+    const twozerotwo = client.channels.cache.get('740370099138986075');
+    const twozerothree = client.channels.cache.get('740370121348087852');
+    const twozerofour = client.channels.cache.get('740370123986174013');
+    const twozerofive = client.channels.cache.get('740370274721202230');
+    const glitchchannel = client.channels.cache.get('740377502249123841');
     if (message.content === "0.02" ) {
         // "Pong"으로 되돌려 칩니다.
         message.channel.send("안한다구요!!");
@@ -161,6 +171,31 @@ client.on('message', (message) => {
     if (message.content === `${prefix} 상점`) {
         message.channel.send(shopEmbed);
     }
+    if(message.content.startsWith(`${prefix} 전체 공지`)) {
+        let dafigisuksagongji = message.content.slice(`${prefix} 전체 공지`.length);
+        onezeroone.send("❗ 전체 공지 알림 ❗");
+        onezeroone.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        onezerotwo.send("❗ 전체 공지 알림 ❗");
+        onezerotwo.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        onezerothree.send("❗ 전체 공지 알림 ❗");
+        onezerothree.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        onezerofour.send("❗ 전체 공지 알림 ❗");
+        onezerofour.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        onezerofive.send("❗ 전체 공지 알림 ❗");
+        onezerofive.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozeroone.send("❗ 전체 공지 알림 ❗");
+        twozeroone.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozerotwo.send("❗ 전체 공지 알림 ❗");
+        twozerotwo.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozerothree.send("❗ 전체 공지 알림 ❗");
+        twozerothree.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozerofour.send("❗ 전체 공지 알림 ❗");
+        twozerofour.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        twozerofive.send("❗ 전체 공지 알림 ❗");
+        twozerofive.send(`${message.channel.name} : ${dafigisuksagongji}`);
+        glitchchannel.send("❗ 전체 공지 알림 ❗");
+        glitchchannel.send(`${message.channel.name} : ${dafigisuksagongji}`);
+	}
     if(message.content.startsWith(`${prefix} 블홀공지`)) {
         let bhkj = message.content.slice(`${prefix} 블홀공지`.length);
         blueholdcn.send(bhkj);
