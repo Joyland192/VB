@@ -197,47 +197,47 @@ client.on('message', (message) => {
         twozerosix.send(`${message.channel.name} : ${dafigisuksagongji}`);
     }
     if (message.content.startsWith(`${prefix} 전송 101`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 101`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 101 `.length);
         onezeroone.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 102`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 102`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 102 `.length);
         onezerotwo.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 103`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 103`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 103 `.length);
         onezerothree.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 104`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 104`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 104 `.length);
         onezerofour.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 105`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 105`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 105 `.length);
         onezerofive.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 201`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 201`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 201 `.length);
         twozeroone.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 202`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 202`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 202 `.length);
         twozerotwo.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 203`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 203`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 203 `.length);
         twozerothree.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 204`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 204`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 204 `.length);
         twozerofour.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 205`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 205`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 205 `.length);
         twozerofive.send(`${message.channel.name} : ${dafisend}`);
     }
     if (message.content.startsWith(`${prefix} 전송 206`)) {
-        let dafisend = message.content.slice(`${prefix} 전송 206`.length);
+        let dafisend = message.content.slice(`${prefix} 전송 206 `.length);
         twozerosix.send(`${message.channel.name} : ${dafisend}`);
     }
     if(message.content.startsWith(`${prefix} 블홀공지`)) {
